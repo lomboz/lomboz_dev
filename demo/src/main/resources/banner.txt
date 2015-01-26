@@ -1,0 +1,5 @@
+#########################################
+# My Demo App 							
+# AppVersion:  ${application.version}	
+# Boot Version: ${spring-boot.version}  
+#########################################
