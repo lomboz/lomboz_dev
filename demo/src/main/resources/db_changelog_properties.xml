@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<property name="text.type" value="CLOB" dbms="oracle"/>
+    <property name="text.type" value="TEXT" dbms="mysql"/>
+
+	<property name="number.type" value="NUMBER(19,0)" dbms="oracle"/>
+    <property name="number.type" value="BIGINT" dbms="mysql"/>
+
+	<property name="date.type" value="DATE" dbms="oracle"/>
+    <property name="date.type" value="DATETIME" dbms="mysql"/>
+
+	<property name="varchar.type" value="VARCHAR2" dbms="oracle"/>
+    <property name="varchar.type" value="VARCHAR" dbms="mysql"/>
+
+	<property name="boolean.type" value="NUMBER(1,0)" dbms="oracle"/>
+    <property name="boolean.type" value="BIT" dbms="mysql"/>
+
+	<property name="integer.type" value="NUMBER(10,0)" dbms="oracle"/>
+    <property name="integer.type" value="INTEGER" dbms="mysql"/>
+
+	<property name="float.type" value="FLOAT" dbms="oracle"/>
+    <property name="float.type" value="FLOAT" dbms="mysql"/>
+
+	<property name="double.type" value="DOUBLE" dbms="oracle"/>
+    <property name="double.type" value="DOUBLE" dbms="mysql"/>
+
+	<property name="longBlob.type" value="BLOB" dbms="oracle"/>
+    <property name="longBlob.type" value="LONGBLOB" dbms="mysql"/>
+
+	<property name="blob.type" value="BLOB" dbms="oracle"/>
+    <property name="blob.type" value="BLOB" dbms="mysql"/>
+
+	<property name="mediumBlob.type" value="BLOB" dbms="oracle"/>
+    <property name="mediumBlob.type" value="MEDIUMBLOB" dbms="mysql"/>
+
+    <property name="mediumText.type" value="CLOB" dbms="oracle"/>
+    <property name="mediumText.type" value="MEDIUMTEXT" dbms="mysql"/>
+
+</databaseChangeLog>

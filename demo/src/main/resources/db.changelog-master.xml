@@ -4,18 +4,31 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-
-	<changeSet id="1" author="hans">
-		<createTable tableName="user">
-			<column name="id" type="int" autoIncrement="true">
+	<include file="db_changelog_properties.xml" relativeToChangelogFile="true"/>
+	
+	
+	<changeSet id="2" author="lomboz">
+		<createTable tableName="users">
+			<column name="username" type="${varchar.type}(255)">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
-			<column name="username" type="varchar(255)">
+			<column name="password" type="${varchar.type}(255)">
 				<constraints nullable="false" />
 			</column>
-			<column name="password" type="varchar(255)">
+			<column name="enabled " type="${boolean.type}">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
+		<createTable tableName="authorities">
+			<column name="username" type="${varchar.type}(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="authority" type="${varchar.type}(255)">
+				<constraints nullable="false" />
+			</column>
+			
+		</createTable>
+		<addForeignKeyConstraint constraintName="fk_authorities_users" referencedTableName="users" referencedColumnNames="username" baseColumnNames="username" baseTableName="authorities" />
+		<addUniqueConstraint constraintName="ix_auth_username" columnNames="username,authority" tableName="authorities"/>
 	</changeSet>
 </databaseChangeLog>
